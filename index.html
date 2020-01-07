@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form>
+	<div>
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username">
+	</div>
+
+	<div>
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password">
+	</div>
+
+	<div>
+		<label for="show-password">
+			<input type="checkbox" name="show-passwords" id="show-password">
+			Show password
+		</label>
+	</div>
+
+	<p>
+		<button type="submit">Log In</button>
+	</p>
+</form>
+
+<script>
+	inputElement = document.querySelector('#password')
+	checkboxElement = document.querySelector('#show-password')
+
+	checkboxElement.addEventListener('click', function(event) {
+		checkboxElement.checked === true ? inputElement.type = 'text' : inputElement.type = 'password'
+	}, false)
+</script>
+</body>
+</html>
