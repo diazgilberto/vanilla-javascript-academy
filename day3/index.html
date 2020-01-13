@@ -22,17 +22,12 @@
 </form>
 
 <script>
-	var passwordInputs = Array.from(document.querySelectorAll('input'))
+	var passwordInputs = Array.from(document.querySelectorAll('[type="password"]'))
 	var toggle = document.querySelector('#show-passwords')
 
 	toggle.addEventListener('click', function togglePassword(event) {
-		passwordInputs.forEach(function(input, index) {
-			if(input.id !== 'show-passwords' && !!toggle.checked) {
-				input.type = 'text'
-			}
-			if(input.id !== 'show-passwords' && !toggle.checked) {
-				input.type = 'password'
-			}
+		passwordInputs.forEach(function(input) {
+			!!toggle.checked ? input.type = 'text' : input.type = 'password'
 		})
 	})
 	
