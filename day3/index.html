@@ -1,0 +1,39 @@
+<form>
+	<div>
+		<label for="current-password">Current Password</label>
+		<input type="password" name="current-password" id="current-password">
+	</div>
+
+	<div>
+		<label for="new-password">New Password</label>
+		<input type="password" name="new-password" id="new-password">
+	</div>
+
+	<div>
+		<label for="show-passwords">
+			<input type="checkbox" name="show-passwords" id="show-passwords">
+			Show passwords
+		</label>
+	</div>
+
+	<p>
+		<button type="submit">Change Passwords</button>
+	</p>
+</form>
+
+<script>
+	var passwordInputs = Array.from(document.querySelectorAll('input'))
+	var toggle = document.querySelector('#show-passwords')
+
+	toggle.addEventListener('click', function togglePassword(event) {
+		passwordInputs.forEach(function(input, index) {
+			if(input.id !== 'show-passwords' && !!toggle.checked) {
+				input.type = 'text'
+			}
+			if(input.id !== 'show-passwords' && !toggle.checked) {
+				input.type = 'password'
+			}
+		})
+	})
+	
+</script>

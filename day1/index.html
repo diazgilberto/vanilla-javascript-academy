@@ -32,7 +32,7 @@
 	checkboxElement = document.querySelector('#show-password')
 
 	checkboxElement.addEventListener('click', function(event) {
-		checkboxElement.checked === true ? inputElement.type = 'text' : inputElement.type = 'password'
+		!!checkboxElement.checked ? inputElement.type = 'text' : inputElement.type = 'password'
 	}, false)
 </script>
 </body>
